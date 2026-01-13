@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Style Living LLC | Nursing Care & Therapeutic Massage</title>
+    <meta name="description" content="Professional nursing care and therapeutic massage services in Jacksonville. We provide holistic wellness solutions in a family-style environment.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2C5F72;
+            --secondary-color: #D6E4E7;
+            --accent-color: #C8A47E;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-light: #F9FAFB;
+            --transition: all 0.3s ease-in-out;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background-color: #1e4555;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            padding: 20px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .cta-button-header {
+            padding: 10px 24px;
+            font-size: 0.9rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(rgba(44, 95, 114, 0.7), rgba(44, 95, 114, 0.5)), url('main1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            margin-top: 0; 
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding-top: 60px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+
+        .about-section {
+            background-color: var(--white);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            border-top: 4px solid var(--accent-color);
+            border-left: 4px solid var(--accent-color);
+            z-index: -1;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-text {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .services-section {
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 40px 32px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--primary-color);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .service-description {
+            color: var(--text-light);
+        }
+
+        .advantages-section {
+            background-color: var(--white);
+            overflow: hidden;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .advantage-item {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid var(--accent-color);
+        }
+
+        .advantage-title {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+
+        .advantage-desc {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .process-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .process-section .section-title,
+        .process-section .section-subtitle {
+            color: var(--white);
+        }
+
+        .process-section .section-subtitle {
+            opacity: 0.9;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background-color: rgba(255,255,255, 0.3);
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--white);
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 0 0 8px rgba(255,255,255,0.2);
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .step-desc {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+
+        .footer {
+            background-color: #1a3c4a;
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-contact-info h4 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-icon {
+            margin-right: 12px;
+            margin-top: 4px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 12px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.2s;
+            background: none;
+            border: none;
+        }
+
+        .close-modal:hover {
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(44, 95, 114, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #D1FAE5;
+            color: #059669;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            .about-container {
+                gap: 40px;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .advantages-grid {
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .nav-links, .navbar .btn {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .about-container {
+                flex-direction: column;
+            }
+            .about-image {
+                width: 100%;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .process-steps::before {
+                display: none;
+            }
+            .step-number {
+                margin-bottom: 16px;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            padding: 20px;
+            box-shadow: var(--shadow-md);
+            transform: translateY(-150%);
+            transition: transform 0.3s ease;
+            z-index: 900;
+            text-align: center;
+        }
+        
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                FAMILY STYLE <span>LIVING</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#features" class="nav-link">Why Us</a>
+                <a href="#workflow" class="nav-link">Our Process</a>
+            </nav>
+            <button class="btn btn-primary cta-button-header" onclick="openModal()">Get in Touch</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#about" class="mobile-nav-link" onclick="toggleMobileMenu()">About Us</a>
+            <a href="#services" class="mobile-nav-link" onclick="toggleMobileMenu()">Services</a>
+            <a href="#features" class="mobile-nav-link" onclick="toggleMobileMenu()">Why Us</a>
+            <a href="#workflow" class="mobile-nav-link" onclick="toggleMobileMenu()">Our Process</a>
+            <button class="btn btn-primary" style="margin-top: 20px; width: 100%;" onclick="openModal(); toggleMobileMenu()">Contact Us</button>
+        </div>
+    </header>
+
+    <!-- 1. Hero Screen -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Compassionate Care Meets<br>Therapeutic Wellness</h1>
+            <h2 class="hero-subtitle">Experience a new standard of living where professional nursing care and restorative massage therapy come together to nurture body, mind, and spirit in Jacksonville.</h2>
+            <button class="btn btn-primary" onclick="openModal()">Schedule a Consultation</button>
+        </div>
+    </section>
+
+    <!-- 2. About Us -->
+    <section id="about" class="section-padding about-section">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?q=80&w=2070&auto=format&fit=crop" alt="Caring nurse with elderly patient">
+            </div>
+            <div class="about-content">
+                <div class="section-header" style="text-align: left; margin: 0 0 30px 0;">
+                    <h2 class="section-title">A Sanctuary of Care & Comfort</h2>
+                    <p class="section-subtitle">Dedicated to holistic wellbeing</p>
+                </div>
+                <div class="about-text">
+                    <p>At Family Style Living LLC, we believe that quality care goes beyond medical necessities; it is about creating an environment where dignity and comfort flourish. Established in Jacksonville, our facility bridges the gap between clinical nursing excellence and the warmth of a family home. We specialize in providing comprehensive nursing care tailored to individual needs, ensuring safety and peace of mind for families.</p>
+                    <p>What sets us apart is our integrated approach to wellness, incorporating professional therapeutic massage to alleviate pain, improve circulation, and enhance the overall quality of life for our residents. Our team consists of licensed practitioners who are not just caregivers but companions in your loved one's journey. We are committed to fostering a supportive community where every resident feels valued, heard, and deeply cared for.</p>
+                </div>
+                <button class="btn btn-outline" onclick="openModal()">Learn More About Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Services -->
+    <section id="services" class="section-padding services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-subtitle">Comprehensive care solutions tailored to individual needs</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14h-2v-4H6v-2h4V7h2v4h4v2h-4v4z"/></svg>
+                    </div>
+                    <h3 class="service-title">Skilled Nursing Care</h3>
+                    <p class="service-description">We provide round-the-clock professional nursing supervision, medication management, and health monitoring. Our licensed staff ensures that all medical protocols are followed strictly while maintaining a gentle and compassionate bedside manner for every resident.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <h3 class="service-title">Therapeutic Massage</h3>
+                    <p class="service-description">Our specialized massage therapy focuses on geriatric needs, offering pain relief, reducing inflammation, and promoting relaxation. Regular sessions are designed to improve mobility, decrease stress levels, and contribute significantly to emotional and physical well-being.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 4.16 6.86 8.55 11.54L12 21.35l1.45-1.32C17.84 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+                    </div>
+                    <h3 class="service-title">Assisted Living Support</h3>
+                    <p class="service-description">We assist with daily living activities such as bathing, dressing, and dining, empowering residents to maintain as much independence as possible. Our goal is to provide a supportive environment that feels like home, fostering social connection and personal dignity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Advantages (Why Work With Us) -->
+    <section id="features" class="section-padding advantages-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Family Style Difference</h2>
+                <p class="section-subtitle">Why families in Jacksonville trust us with their loved ones</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <h3 class="advantage-title">Holistic Health Integration</h3>
+                    <p class="advantage-desc">We don't just treat symptoms; we care for the whole person. By combining clinical nursing with therapeutic touch and massage, we address both physical ailments and emotional health, leading to better overall outcomes.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3 class="advantage-title">Certified Expertise</h3>
+                    <p class="advantage-desc">Our team comprises fully licensed nurses and certified massage therapists who specialize in senior care. Continuous training ensures that we employ the latest best practices in safety, hygiene, and rehabilitative techniques.</p>
+                </div>
+                <div class="advantage-item">
+                    <h3 class="advantage-title">Family-Centric Environment</h3>
+                    <p class="advantage-desc">Unlike large, impersonal institutions, we maintain a warm, low-ratio setting where every resident is known by name. We encourage family involvement and transparency, treating your loved ones as an extension of our own family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Procedure/Process -->
+    <section id="workflow" class="section-padding process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Admission Process</h2>
+                <p class="section-subtitle">A simple, transparent journey to better care</p>
+            </div>
+            <div class="process-steps">
+                <!-- Step 1 -->
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Initial Consultation</h3>
+                    <p class="step-desc">We begin with a personal meeting to discuss your specific needs, medical history, and preferences. This helps us determine if our facility is the perfect match for your requirements.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Care Plan Customization</h3>
+                    <p class="step-desc">Our nursing and therapy team collaborates to design a tailored care plan. This includes medication schedules, dietary needs, and a personalized massage therapy regimen.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Welcome Home</h3>
+                    <p class="step-desc">On move-in day, we handle the logistics to ensure a smooth transition. We introduce the care team, settle your loved one into their comfortable space, and begin their wellness journey immediately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 & 7. Contact Info & Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div style="flex: 1; min-width: 250px;">
+                    <div class="footer-logo">FAMILY STYLE LIVING LLC</div>
+                    <p style="opacity: 0.7; max-width: 300px;">Providing exceptional nursing and therapeutic care in Jacksonville. Committed to dignity, comfort, and holistic health.</p>
+                </div>
+                
+                <div class="footer-contact-info" style="flex: 1; min-width: 250px;">
+                    <h4>Contact Us</h4>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <span>main@peoplecentricrealtysolutions.info</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <span>11250 Old Saint Augustine Rd Ste 15<br>32257 Jacksonville, Florida</span>
+                    </div>
+                </div>
+
+                <div style="flex: 1; min-width: 250px;">
+                    <button class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;" onclick="openModal()">Send a Message</button>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Style Living LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal Form -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div id="formContainer">
+                <div class="section-header" style="margin-bottom: 30px;">
+                    <h3 class="section-title" style="font-size: 1.8rem;">Contact Us</h3>
+                    <p class="section-subtitle" style="font-size: 0.9rem;">We will get back to you via email shortly.</p>
+                </div>
+                <form id="contactForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest" class="form-label">I am interested in</label>
+                        <select id="interest" class="form-control">
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Nursing Care">Nursing Care</option>
+                            <option value="Massage Therapy">Massage Therapy</option>
+                            <option value="Admissions">Admissions Process</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-control" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Success Message (Hidden by default) -->
+            <div id="successMessage" style="display: none;">
+                <div class="success-message">
+                    <div class="success-icon">✓</div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 10px;">Message Sent!</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px;">Thank you for reaching out to Family Style Living. We have received your inquiry and will contact you via email at main@peoplecentricrealtysolutions.info shortly.</p>
+                    <button class="btn btn-outline" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('contactModal');
+        const formContainer = document.getElementById('formContainer');
+        const successMessage = document.getElementById('successMessage');
+        const contactForm = document.getElementById('contactForm');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function openModal() {
+            modal.classList.add('active');
+            // Reset form state when opening
+            formContainer.style.display = 'block';
+            successMessage.style.display = 'none';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Get values (In a real backend implementation, these would be sent to a server)
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Simulate sending delay
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                // Hide form, Show success
+                formContainer.style.display = 'none';
+                successMessage.style.display = 'block';
+                
+                // Reset form
+                contactForm.reset();
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }, 1000);
+        }
+
+        // Add smooth reveal animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Select elements to animate
+            const animateElements = document.querySelectorAll('.service-card, .advantage-item, .step-item, .about-content, .about-image');
+            
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
